@@ -1,0 +1,6 @@
+#N canvas 676 0 681 676 12;
+#X text 255 69 <-- 0-100;
+#X text 255 132 <-- 0-100;
+#X obj 52 10 MOtestabs;
+#X text -24 53 -->;
+#X text 0 44 0 - 100;
