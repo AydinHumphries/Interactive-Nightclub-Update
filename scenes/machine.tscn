@@ -1,0 +1,166 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/control.gd" type="Script" id=2]
+
+[node name="machine" type="Node"]
+
+[node name="control" type="Control" parent="."]
+margin_left = 32.0
+margin_top = 233.0
+margin_right = 477.0
+margin_bottom = 419.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="Button" parent="control"]
+margin_left = 117.303
+margin_top = 120.598
+margin_right = 326.303
+margin_bottom = 171.598
+text = "return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonConnect" type="Button" parent="control"]
+visible = false
+margin_left = 125.0
+margin_top = 4.8701
+margin_right = 319.0
+margin_bottom = 40.8701
+text = "Connect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chord1likelihood" type="HSlider" parent="control"]
+margin_left = 21.0711
+margin_top = -86.9853
+margin_right = 217.071
+margin_bottom = -70.9853
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="control/chord1likelihood"]
+margin_left = 8.0
+margin_top = -22.5
+margin_right = 48.0
+margin_bottom = -8.5
+text = "chord1likelihood"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chord2likelihood" type="HSlider" parent="control"]
+margin_left = 19.9853
+margin_top = -45.3137
+margin_right = 215.985
+margin_bottom = -29.3137
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="control/chord2likelihood"]
+margin_left = 20.0
+margin_top = -16.0
+margin_right = 127.0
+margin_bottom = -2.0
+text = "chord2likelihood"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="multioscdecaytime" type="HSlider" parent="control"]
+margin_left = 20.9853
+margin_top = -0.535522
+margin_right = 216.985
+margin_bottom = 15.4645
+min_value = 500.0
+max_value = 5000.0
+step = 45.0
+value = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="control/multioscdecaytime"]
+margin_left = 20.5
+margin_top = -16.0
+margin_right = 143.5
+margin_bottom = -2.0
+text = "multioscdecaytime"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="multioscwahwah" type="HSlider" parent="control"]
+margin_left = 22.2782
+margin_top = 48.5
+margin_right = 218.278
+margin_bottom = 64.5
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="label" type="Label" parent="control/multioscwahwah"]
+margin_left = 15.5
+margin_top = -20.0
+margin_right = 122.5
+margin_bottom = -6.0
+text = "multioscwahwah"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="multioscvolume" type="HSlider" parent="control"]
+margin_left = 20.6066
+margin_top = 95.1213
+margin_right = 216.607
+margin_bottom = 111.121
+max_value = 1.0
+step = 0.01
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="label" type="Label" parent="control/multioscvolume"]
+margin_left = 18.0
+margin_top = -17.0
+margin_right = 125.0
+margin_bottom = -3.0
+text = "multioscvolume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MOdurationsTxt" type="LineEdit" parent="control"]
+margin_left = 235.0
+margin_top = 12.0
+margin_right = 432.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MOdurationsButton" type="Button" parent="control"]
+margin_left = 238.586
+margin_top = 55.108
+margin_right = 431.586
+margin_bottom = 96.108
+text = "Send MOdurations"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="control/button" to="control" method="_on_return_pressed"]
+[connection signal="pressed" from="control/buttonConnect" to="control" method="_on_connect"]
+[connection signal="value_changed" from="control/chord1likelihood" to="control" method="_on_chord1likelihood_value_changed"]
+[connection signal="value_changed" from="control/chord2likelihood" to="control" method="_on_chord2likelihood_value_changed"]
+[connection signal="value_changed" from="control/multioscdecaytime" to="control" method="_on_multioscdecaytime_value_changed"]
+[connection signal="value_changed" from="control/multioscwahwah" to="control" method="_on_multioscwahwah_value_changed"]
+[connection signal="value_changed" from="control/multioscvolume" to="control" method="_on_multioscvolume_value_changed"]
+[connection signal="pressed" from="control/MOdurationsButton" to="control" method="_on_MOdurationsButton_pressed"]
